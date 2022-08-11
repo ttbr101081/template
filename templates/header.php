@@ -9,79 +9,62 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-        font-family: Helvetica;
-        width: 480px;
-        margin: 0 auto;
-    }
+        header {
+            font-family: Helvetica;
+            width: 480px;
+            margin: 0 auto;
+        }
 
-    ul {
-        list-style: none;
-    }
+        ul {
+            list-style: none;
+        }
 
-    #menu li>a {
-        background-color: grey;
-        color: white;
-        padding: 10px;
-        display: block;
-        text-decoration: none;
-        min-width: 100px;
-    }
+        #menu li>a {
+            background-color: grey;
+            color: white;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            min-width: 100px;
+        }
 
-    #menu li>a:hover {
-        color: #000;
-        background-color: #eaeaea;
-    }
+        #menu li>a:hover {
+            color: #000;
+            background-color: #eaeaea;
+        }
 
-    #menu>li {
-        float: left;
-        text-align: center
-    }
+        #menu>li {
+            float: left;
+            text-align: center
+        }
 
-    #menu>li>ul {
-        display: none;
-    }
+        #menu>li>ul {
+            display: none;
+        }
 
-    #menu>li:hover>ul {
-        display: block;
-    }
+        #menu>li:hover>ul {
+            display: block;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-<<<<<<< HEAD
-    <div class="row">
-    	<nav>
-        <ul id="menu">
-          <li><a href="index.php">Inicio</a></li>
-          <li><a href="crear.php">Crear</a> </li>
-          <li><a href="">Pagar</a></li>
-          <li><a href="">Contacto</a></li>
-        </ul>
-      </nav>
-      </div>
-=======
+
         <div class="row">
             <nav>
                 <ul id="menu">
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Cursos</a>
-                        <ul>
-                            <li><a href="">Frontend</a></li>
-                            <li><a href="">Backend</a></li>
-                            <li><a href="">Mobile</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="">Tutoriales</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="crear.php">Crear</a> </li>
+                    <li><a href="pagar.php">Pagar</a></li>
+                    <li><a href="facturas.php">Factura</a></li>
                 </ul>
             </nav>
         </div>
->>>>>>> 4c1179d5f2b7da011b321583b66f3a40be5a9826
     </div>
+</body>
