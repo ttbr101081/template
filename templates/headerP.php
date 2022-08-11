@@ -59,7 +59,7 @@
         <div class="row">
             <nav>
                 <ul id="menu">
-                    <li><a href="#">Cerrar Sesion</a></li>
+                    <li><a href="logout.php">Cerrar Sesion</a></li>
                     
                 </ul>
             </nav>

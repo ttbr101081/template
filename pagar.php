@@ -10,7 +10,7 @@ if (isset($_POST['submit']) && !hash_equals($_SESSION['csrf'], $_POST['csrf'])) 
     die();
 }
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) && isset($_GET['ced'])) {
     $resultado = [
         'error' => false,
         'mensaje' => 'El rol de pago ha sido agregado con éxito'
@@ -28,8 +28,7 @@ if (isset($_POST['submit'])) {
             "estado"   => 1,
             "fecha"    => date('Y-m-d'),
             "servicio" => $_POST['servicio'],
-            "cedula"    => $_POST['cedula'],
-            
+            "cedula"    => $_GET['ced'],
         ];
 
         $consultaSQL = "INSERT INTO factura (VAL_PAG, MET_PAG, EST_PAG, FEC_PAG, ID_SER, CED_CLI)";
@@ -77,10 +76,10 @@ if (isset($resultado)) {
                     <label for="metodo">Metodo de pago</label>
                     <input type="text" name="metodo" id="metodo" class="form-control">
                 </div>
-                <div class="form-group">
+                <!--<div class="form-group">
                     <label for="cedula">Cedula</label>
                     <input type="text" name="cedula" id="cedula" class="form-control">
-                </div>
+                </div>-->
                 <div class="form-group">
                     <label for="cedula">Servicio</label>
                     <select name='servicio' id='servicio'>

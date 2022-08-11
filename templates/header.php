@@ -63,7 +63,7 @@
                     <li><a href="crear.php">Crear</a> </li>
                     <li><a href="pagar.php">Pagar</a></li>
                     <li><a href="facturas.php">Factura</a></li>
-                    <li><a href="#">Cerrar sesion</a></li>
+                    <li><a href="logout.php">Cerrar sesion</a></li>
                 </ul>
             </nav>
         </div>

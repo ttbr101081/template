@@ -27,8 +27,8 @@ if (isset($_POST['submit'])) {
       
     ];
 
-    $consultaSQL = "INSERT INTO usuario (CED_CLI, NOM_CLI, APE_CLI, CORR_CLI, PASSWORD, SOCIO)";
-    $consultaSQL .= "values (:" . implode(", :", array_keys($usuario)) . "'123', 0)";
+    $consultaSQL = "INSERT INTO usuario (CED_CLI, NOM_CLI, APE_CLI, CORR_CLI, PASSWORD, SOCIO, rol)";
+    $consultaSQL .= "values (:" . implode(", :", array_keys($usuario)) . "'123', 0, 0)";
 
     $sentencia = $conexion->prepare($consultaSQL);
     $sentencia->execute($Usuario);

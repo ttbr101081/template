@@ -1,10 +1,14 @@
 <?php
 include 'funciones.php';
+session_start();
+if(!isset($_SESSION['cedu'])){
+  header('location: https://localhost/template/login.php');
+}
 
-csrf();
+/*csrf();
 if (isset($_POST['submit']) && !hash_equals($_SESSION['csrf'], $_POST['csrf'])) {
   die();
-}
+}*/
 
 $error = false;
 $config = include 'config.php';
