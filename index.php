@@ -14,21 +14,21 @@ try {
   $conexion = new PDO($dsn, $config['db']['user'], $config['db']['pass'], $config['db']['options']);
 
   if (isset($_POST['apellido'])) {
-    $consultaSQL = "SELECT * FROM alumnos WHERE apellido LIKE '%" . $_POST['apellido'] . "%'";
+    $consultaSQL = "SELECT * FROM usuario WHERE APE_CLI LIKE '%" . $_POST['apellido'] . "%'";
   } else {
-    $consultaSQL = "SELECT * FROM alumnos";
+    $consultaSQL = "SELECT * FROM usuario";
   }
 
   $sentencia = $conexion->prepare($consultaSQL);
   $sentencia->execute();
 
-  $alumnos = $sentencia->fetchAll();
+  $usuario = $sentencia->fetchAll();
 
 } catch(PDOException $error) {
   $error= $error->getMessage();
 }
 
-$titulo = isset($_POST['apellido']) ? 'Lista de alumnos (' . $_POST['apellido'] . ')' : 'Lista de alumnos';
+$titulo = isset($_POST['apellido']) ? 'Lista de usuarios (' . $_POST['apellido'] . ')' : 'Lista de usuarios';
 ?>
 
 <?php include "templates/header.php"; ?>
@@ -52,7 +52,7 @@ if ($error) {
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <a href="crear.php"  class="btn btn-primary mt-4">Crear alumno</a>
+      <!--<a href="crear.php"  class="btn btn-primary mt-4">Crear usuario</a>-->
       <hr>
       <form method="post" class="form-inline">
         <div class="form-group mr-3">
@@ -73,28 +73,28 @@ if ($error) {
       <table class="table">
         <thead>
           <tr>
-            <th>#</th>
+            <th>Cedula</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
-            <th>Edad</th>
+            <th>Socio</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
           <?php
-          if ($alumnos && $sentencia->rowCount() > 0) {
-            foreach ($alumnos as $fila) {
+          if ($usuario && $sentencia->rowCount() > 0) {
+            foreach ($usuario as $fila) {
               ?>
               <tr>
-                <td><?php echo escapar($fila["id"]); ?></td>
-                <td><?php echo escapar($fila["nombre"]); ?></td>
-                <td><?php echo escapar($fila["apellido"]); ?></td>
-                <td><?php echo escapar($fila["email"]); ?></td>
-                <td><?php echo escapar($fila["edad"]); ?></td>
+                <td><?php echo escapar($fila["CED_CLI"]); ?></td>
+                <td><?php echo escapar($fila["NOM_CLI"]); ?></td>
+                <td><?php echo escapar($fila["APE_CLI"]); ?></td>
+                <td><?php echo escapar($fila["CORR_CLI"]); ?></td>
+                <td><?php echo escapar($fila["SOCIO"]); ?></td>
                 <td>
-                  <a href="<?= 'borrar.php?id=' . escapar($fila["id"]) ?>">🗑️Borrar</a>
-                  <a href="<?= 'editar.php?id=' . escapar($fila["id"]) ?>">✏️Editar</a>
+                  <a href="<?= 'borrar.php?id=' . escapar($fila["CED_CLI"]) ?>">🗑️Borrar</a>
+                  <a href="<?= 'editar.php?id=' . escapar($fila["CED_CLI"]) ?>">✏️Editar</a>
                 </td>
               </tr>
               <?php

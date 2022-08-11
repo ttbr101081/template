@@ -55,6 +55,18 @@
 
 <body>
     <div class="container">
+<<<<<<< HEAD
+    <div class="row">
+    	<nav>
+        <ul id="menu">
+          <li><a href="index.php">Inicio</a></li>
+          <li><a href="crear.php">Crear</a> </li>
+          <li><a href="">Pagar</a></li>
+          <li><a href="">Contacto</a></li>
+        </ul>
+      </nav>
+      </div>
+=======
         <div class="row">
             <nav>
                 <ul id="menu">
@@ -71,4 +83,5 @@
                 </ul>
             </nav>
         </div>
+>>>>>>> 4c1179d5f2b7da011b321583b66f3a40be5a9826
     </div>
