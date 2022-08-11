@@ -1,7 +1,7 @@
 <?php
 include 'funciones.php';
 
-include 'templates/header.php';
+include 'templates/headerP.php';
 
 require "data/conex.php";
 

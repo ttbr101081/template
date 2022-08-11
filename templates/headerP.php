@@ -59,11 +59,8 @@
         <div class="row">
             <nav>
                 <ul id="menu">
-                    <li><a href="index.php">Inicio</a></li>
-                    <li><a href="crear.php">Crear</a> </li>
-                    <li><a href="pagar.php">Pagar</a></li>
-                    <li><a href="facturas.php">Factura</a></li>
-                    <li><a href="#">Cerrar sesion</a></li>
+                    <li><a href="#">Cerrar Sesion</a></li>
+                    
                 </ul>
             </nav>
         </div>
