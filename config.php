@@ -5,7 +5,7 @@ return [
     'host' => 'localhost',
     'user' => 'root',
     'pass' => '',
-    'name' => 'servicios',
+    'name' => 'gestiondocumental',
     'options' => [
       PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Login 08</title>
+	<title>Login</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -27,16 +27,12 @@
 						<h3 class="text-center mb-4">Iniciar Sesion</h3>
 						<form action="#" class="login-form" method="POST">
 							<div class="form-group">
-								<input type="text" name="cedula" id="cedula" class="form-control rounded-left" placeholder="Usuario" required>
+								<input type="text" name="cedula" id="cedula" class="form-control rounded-left" placeholder="Cedula" required>
 							</div>
 							<div class="form-group d-flex">
 								<input type="password" name="password" id="password" class="form-control rounded-left" placeholder="Contraseña" required>
 							</div>
 							<div class="form-group d-md-flex">
-
-								<div class="w-50 text-md-right">
-									<a href="#">registrate</a>
-								</div>
 							</div>
 							<div class="form-group">
 								<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Ingresar</button>
@@ -56,21 +52,22 @@
 		require "data/conex.php";
 		
 		session_start();
-		if(isset($_POST['cedula'])){
+		if(isset($_POST['cedula']) && isset($_POST['password'])){
 			$cedula = $_POST['cedula'];
+			$password = $_POST['password'];
 			$_SESSION['cedu'] = $cedula;
-			if($cedula==''){
+			if($cedula=='' && $password==''){
 				echo '<script language="javascript">alert("Debe ingresar los datos requeridos");window.location.href="login.php"</script>';
 			}else{
-				$sql = "SELECT * FROM usuario where ced_cli = '$cedula'";
+				$sql = "SELECT * FROM empleado where cedula = '$cedula' and password = '$password'";
 				$r = mysqli_query($l, $sql);
 				$n = mysqli_num_rows($r);
 				if($n==1){
 					$resultado = $r -> fetch_assoc();
-					if($resultado["rol"]==0){
-						echo '<script language="javascript">alert("Comprobacion existosa");window.location.href="pagar.php?ced=' .$cedula. '"</script>';
-					}else{
+					if($resultado["rol"]==1){
 						echo '<script language="javascript">alert("Comprobacion existosa");window.location.href="index.php"</script>';
+					}else{
+						echo '<script language="javascript">alert("Comprobacion existosa");window.location.href="crear.php"</script>';
 					}
 				}
 			}
